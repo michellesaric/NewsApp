@@ -1,44 +1,42 @@
 @font-face {
-  font-family: "Inter Regular";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/Inter-Regular.woff2?v=3.19") format("woff2"),
-    url("../assets/fonts/Inter-Regular.woff?v=3.19") format("woff");
+  src: url("/src/assets/fonts/Inter-Regular.woff2") format("woff2"),
+    url("/src/assets/fonts/Inter-Regular.woff?v=3.19") format("woff");
 }
 
 @font-face {
-  font-family: "Inter Medium";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../assets/fonts/Inter-Medium.woff2?v=3.19") format("woff2"),
-    url("../assets/fonts/Inter-Medium.woff?v=3.19") format("woff");
+  src: url("/src/assets/fonts/Inter-Medium.woff2?v=3.19") format("woff2"),
+    url("/src/assets/fonts/Inter-Medium.woff?v=3.19") format("woff");
 }
 
 @font-face {
-  font-family: "Inter SemiBold";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../assets/fonts/Inter-SemiBold.woff2?v=3.19") format("woff2"),
-    url("../assets/fonts/Inter-SemiBold.woff?v=3.19") format("woff");
+  src: url("/src/assets/fonts/Inter-SemiBold.woff2?v=3.19") format("woff2"),
+    url("/src/assets/fonts/Inter-SemiBold.woff?v=3.19") format("woff");
 }
-
 @font-face {
-  font-family: "Inter Bold";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../assets/fonts/Inter-Bold.woff2?v=3.19") format("woff2"),
-    url("../assets/fonts/Inter-Bold.woff?v=3.19") format("woff");
+  src: url("/src/assets/fonts/Inter-Bold.woff2?v=3.19") format("woff2"),
+    url("/src/assets/fonts/Inter-Bold.woff?v=3.19") format("woff");
 }
-
 @font-face {
-  font-family: "Inter Black";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url("../assets/fonts/Inter-Black.woff2?v=3.19") format("woff2"),
-    url("../assets/fonts/Inter-Black.woff?v=3.19") format("woff");
+  src: url("/src/assets/fonts/Inter-Black.woff2?v=3.19") format("woff2"),
+    url("/src/assets/fonts/Inter-Black.woff?v=3.19") format("woff");
 }

@@ -1,9 +1,19 @@
 @import "./fonts";
 @import "./variables";
+@import "../pages/home/home";
+@import "../pages/home/categories/categories";
+@import "../pages/home/news/news";
+@import "../pages/home/navbar/navbar";
+@import "../pages/home/latest_news/latestNews";
+@import ".././components/search_bar/searchBar";
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-
+html {
+  display: flex;
+  justify-content: center;
+}

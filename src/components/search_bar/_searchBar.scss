@@ -1,0 +1,28 @@
+.search_bar {
+  padding: 16px 12px;
+  border-radius: 10px;
+  background: $white;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  .search_bar__input {
+    width: 100%;
+    border: none;
+    margin-left: 8px;
+    font-family: "Inter Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: -0.2px;
+    color: $black;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+  }
+
+  .search_bar__input:focus {
+    outline: none;
+  }
+}

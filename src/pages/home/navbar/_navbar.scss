@@ -1,0 +1,23 @@
+.Nav {
+  padding: 24px 16px;
+
+  .Nav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .Nav_wrapper__logo {
+      font-family: "Inter Black";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 29px;
+      color: $dark-gray;
+
+      .Nav_wrapper__logo--red {
+        color: $red;
+      }
+    }
+  }
+}
