@@ -1,13 +1,13 @@
-.Nav {
+.nav {
   padding: 24px 16px;
 
-  .Nav_wrapper {
+  .nav_wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 
-    .Nav_wrapper__logo {
+    .nav_wrapper__logo {
       font-family: "Inter Black";
       font-style: normal;
       font-weight: 900;
@@ -15,7 +15,7 @@
       line-height: 29px;
       color: $dark-gray;
 
-      .Nav_wrapper__logo--red {
+      .nav_wrapper__logo--red {
         color: $red;
       }
     }

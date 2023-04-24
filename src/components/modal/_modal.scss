@@ -1,0 +1,37 @@
+.modal {
+  width: 375px;
+  height: 100vh;
+  background-color: $white-background;
+  position: absolute;
+  top: 0;
+  padding: 28px 16px;
+
+  .modal__exit-icon-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .modal__logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .modal_wrapper__logo {
+      font-family: "Inter Black";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 39px;
+      color: $dark-gray;
+
+      .modal_wrapper__logo--red {
+        color: $red;
+      }
+    }
+  }
+
+  .modal_logo {
+    margin: 64px 0px;
+  }
+}

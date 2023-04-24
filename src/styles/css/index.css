@@ -38,10 +38,10 @@
   background: #f4f5f8;
 }
 
-.Nav {
+.nav {
   padding: 24px 16px;
 }
-.Nav .Nav_wrapper {
+.nav .nav_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,7 +53,7 @@
           align-items: center;
   margin-bottom: 20px;
 }
-.Nav .Nav_wrapper .Nav_wrapper__logo {
+.nav .nav_wrapper .nav_wrapper__logo {
   font-family: "Inter Black";
   font-style: normal;
   font-weight: 900;
@@ -61,7 +61,7 @@
   line-height: 29px;
   color: #1d1d1b;
 }
-.Nav .Nav_wrapper .Nav_wrapper__logo .Nav_wrapper__logo--red {
+.nav .nav_wrapper .nav_wrapper__logo .nav_wrapper__logo--red {
   color: #bb1e1e;
 }
 
@@ -93,6 +93,47 @@
 }
 .search_bar .search_bar__input:focus {
   outline: none;
+}
+
+.modal {
+  width: 375px;
+  height: 100vh;
+  background-color: #f4f5f8;
+  position: absolute;
+  top: 0;
+  padding: 28px 16px;
+}
+.modal .modal__exit-icon-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.modal .modal__logo-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.modal .modal__logo-wrapper .modal_wrapper__logo {
+  font-family: "Inter Black";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 39px;
+  color: #1d1d1b;
+}
+.modal .modal__logo-wrapper .modal_wrapper__logo .modal_wrapper__logo--red {
+  color: #bb1e1e;
+}
+.modal .modal_logo {
+  margin: 64px 0px;
 }
 
 * {
