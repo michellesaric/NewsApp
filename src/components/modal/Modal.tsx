@@ -1,6 +1,6 @@
 import React from "react";
 import Categories from "../../pages/home/categories/Categories";
-import ExitIcon from "../exitIcon/ExitIcon";
+import ExitIcon from "../icons/exit/ExitIcon";
 import SearchBar from "../search_bar/SearchBar";
 
 interface Props {

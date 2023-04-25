@@ -1,5 +1,5 @@
 import React from "react";
-import SearchIcon from "../search_icon/SearchIcon";
+import SearchIcon from "../icons/search/SearchIcon";
 
 function SearchBar() {
   return (

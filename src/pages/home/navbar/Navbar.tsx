@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Hamburger from "../../../components/hamburger/Hamburger";
+import HamburgerIcon from "../../../components/icons/hamburger/HamburgerIcon";
 import SearchBar from "../../../components/search_bar/SearchBar";
 import Modal from "../../../components/modal/Modal";
 
@@ -14,7 +14,7 @@ function Navbar() {
             <span className="nav_wrapper__logo--red">My</span>News
           </h1>
           <div onClick={() => setIsModalOpen(true)}>
-            <Hamburger />
+            <HamburgerIcon />
           </div>
         </div>
         <SearchBar />
