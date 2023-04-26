@@ -37,6 +37,37 @@
   width: 375px;
   background: #f4f5f8;
 }
+.wrapper .button_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 16px;
+}
+.wrapper .button_wrapper .btn {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.0246154px;
+}
+.wrapper .button_wrapper .button_wrapper-red {
+  padding: 10px 16px;
+  background-color: rgba(187, 30, 30, 0.1);
+  border-radius: 20px;
+  color: #bb1e1e;
+  border: none;
+}
+.wrapper .button_wrapper .button_wrapper-regular {
+  background: none;
+  border: none;
+  color: #1d1d1b;
+  padding: 0px 17px;
+}
 
 .categories {
   padding: 28px 14px;
