@@ -1,33 +1,33 @@
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter Regular";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url("/src/assets/fonts/Inter-Regular.woff2") format("woff2"), url("/src/assets/fonts/Inter-Regular.woff?v=3.19") format("woff");
 }
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter Medium";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url("/src/assets/fonts/Inter-Medium.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-Medium.woff?v=3.19") format("woff");
 }
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter SemiBold";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url("/src/assets/fonts/Inter-SemiBold.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-SemiBold.woff?v=3.19") format("woff");
 }
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter Bold";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url("/src/assets/fonts/Inter-Bold.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-Bold.woff?v=3.19") format("woff");
 }
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter Black";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -36,6 +36,7 @@
 .wrapper {
   width: 375px;
   background: #f4f5f8;
+  padding: 24px 16px;
 }
 .wrapper .button_wrapper {
   display: -webkit-box;
@@ -115,9 +116,6 @@
   margin-top: 5.63px;
 }
 
-.nav {
-  padding: 24px 16px;
-}
 .nav .nav_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,6 +151,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 20px;
 }
 .search_bar .search_bar__input {
   width: 100%;
@@ -176,8 +175,11 @@
   width: 375px;
   height: 100vh;
   background-color: #f4f5f8;
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   padding: 28px 16px;
 }
 .modal .modal__exit-icon-wrapper {
@@ -211,6 +213,49 @@
 }
 .modal .modal_logo {
   margin: 64px 0px;
+}
+
+.news-card {
+  -webkit-box-shadow: 0px 1px 2px -1px #c8cad1;
+          box-shadow: 0px 1px 2px -1px #c8cad1;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.news-card .news-card__image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 343px;
+  height: 168px;
+  background: url("../../assets/images/PlaceholderImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.news-card .news-card__text-wrapper {
+  padding: 15px 17px 19px;
+  background-color: #ffffff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.news-card .news-card__text-wrapper .news-card__category {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: -0.0153846px;
+  text-transform: uppercase;
+  color: #1e71bb;
+  margin-bottom: 2px;
+}
+.news-card .news-card__text-wrapper .news-card__title {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.11px;
+  color: #000000;
+  max-width: 281.02px;
 }
 
 * {
