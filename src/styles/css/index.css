@@ -140,6 +140,69 @@
   color: #bb1e1e;
 }
 
+.latest-news {
+  padding: 18px 16px 0px;
+  -webkit-box-shadow: 0px 1px 2px -1px #c8cad1;
+          box-shadow: 0px 1px 2px -1px #c8cad1;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.latest-news .latest-news__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+  background: #ffffff;
+}
+.latest-news .latest-news__header .latest-news__header-circle {
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bb1e1e;
+}
+.latest-news .latest-news__header .latest-news__header-title {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.11px;
+}
+.latest-news .latest-news__list {
+  height: 439px;
+  overflow-y: scroll;
+}
+.latest-news .latest-news__list::-webkit-scrollbar {
+  display: none;
+}
+.latest-news .latest-news__list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.latest-news .latest-news__footer {
+  padding: 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.latest-news .latest-news__footer .latest-news__footer-text {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.09625px;
+  color: #1e71bb;
+  margin-right: 2px;
+}
+
 .search_bar {
   padding: 16px 12px;
   border-radius: 10px;
@@ -256,6 +319,40 @@
   letter-spacing: -0.11px;
   color: #000000;
   max-width: 281.02px;
+}
+
+.latest-news-card {
+  padding: 16px 0px;
+  border-bottom: 1px solid #f4f5f8;
+}
+.latest-news-card .latest-news-card__time {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: -0.0153846px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  color: #1e71bb;
+}
+.latest-news-card .latest-news-card__title {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.11px;
+  color: #000000;
+}
+
+.latest-news-card:first-child {
+  padding-top: 0px;
+}
+
+.latest-news-card:last-child {
+  padding-bottom: 0px;
+  border-bottom: none;
 }
 
 * {
