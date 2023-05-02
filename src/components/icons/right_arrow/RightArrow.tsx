@@ -1,6 +1,6 @@
 import React from "react";
 
-function RightArrow() {
+const RightArrow = () => {
   return (
     <svg
       width="12"
@@ -17,6 +17,6 @@ function RightArrow() {
       />
     </svg>
   );
-}
+};
 
 export default RightArrow;

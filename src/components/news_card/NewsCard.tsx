@@ -1,17 +1,30 @@
 import React from "react";
 
-function NewsCard() {
+interface MainNews {
+  id: number;
+  imageUrl: string;
+  category: string;
+  title: string;
+  author: string;
+}
+interface NewsCardProps {
+  news: MainNews;
+}
+
+export const NewsCard = ({ news }: NewsCardProps) => {
+  const { id, imageUrl, category, title, author } = news;
   return (
     <div className="news-card">
-      <div className="news-card__image"></div>
+      <div
+        className="news-card__image"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      ></div>
       <div className="news-card__text-wrapper">
-        <h3 className="news-card__category">Technology</h3>
-        <p className="news-card__title">
-          Compare Prices Find The Best Compute Accessory
-        </p>
+        <h3 className="news-card__category">{category}</h3>
+        <p className="news-card__title">{title}</p>
       </div>
     </div>
   );
-}
+};
 
 export default NewsCard;

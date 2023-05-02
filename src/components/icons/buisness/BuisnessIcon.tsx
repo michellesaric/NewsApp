@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   color: string;
 }
-function BuisnessIcon({ color }: Props) {
+const BuisnessIcon = ({ color }: Props) => {
   return (
     <svg
       width="20"
@@ -20,6 +20,6 @@ function BuisnessIcon({ color }: Props) {
       />
     </svg>
   );
-}
+};
 
 export default BuisnessIcon;

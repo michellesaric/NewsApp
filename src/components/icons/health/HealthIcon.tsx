@@ -4,7 +4,7 @@ interface Props {
   color: string;
 }
 
-function HealthIcon({ color }: Props) {
+const HealthIcon = ({ color }: Props) => {
   return (
     <svg
       width="20"
@@ -27,6 +27,6 @@ function HealthIcon({ color }: Props) {
       />
     </svg>
   );
-}
+};
 
 export default HealthIcon;

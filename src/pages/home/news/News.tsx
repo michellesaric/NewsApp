@@ -1,17 +1,18 @@
 import React from "react";
 import NewsCard from "../../../components/news_card/NewsCard";
+import { getAllNews } from "../../../api/domain/domain";
 
-function News() {
+const News = () => {
+  const allNews = getAllNews();
   return (
     <div>
-      <NewsCard />
-      <NewsCard />
-      <NewsCard />
-      <NewsCard />
-      <NewsCard />
-      <NewsCard />
+      {allNews.map((news) => (
+        <div key={news.id}>
+          <NewsCard news={news} />
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default News;

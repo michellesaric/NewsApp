@@ -3,7 +3,7 @@ interface Props {
   color: string;
 }
 
-function GeneralIcon({ color }: Props) {
+const GeneralIcon = ({ color }: Props) => {
   return (
     <svg
       width="20"
@@ -20,6 +20,6 @@ function GeneralIcon({ color }: Props) {
       />
     </svg>
   );
-}
+};
 
 export default GeneralIcon;

@@ -4,7 +4,7 @@ interface Props {
   color: string;
 }
 
-function ScienceIcon({ color }: Props) {
+const ScienceIcon = ({ color }: Props) => {
   return (
     <svg
       width="17"
@@ -21,6 +21,6 @@ function ScienceIcon({ color }: Props) {
       />
     </svg>
   );
-}
+};
 
 export default ScienceIcon;

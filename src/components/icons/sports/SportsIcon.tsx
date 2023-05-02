@@ -4,7 +4,7 @@ interface Props {
   color: string;
 }
 
-function SportsIcon({ color }: Props) {
+const SportsIcon = ({ color }: Props) => {
   return (
     <svg
       width="20"
@@ -21,6 +21,6 @@ function SportsIcon({ color }: Props) {
       />
     </svg>
   );
-}
+};
 
 export default SportsIcon;

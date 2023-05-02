@@ -3,7 +3,7 @@ import Navbar from "./navbar/Navbar";
 import News from "./news/News";
 import LatestNews from "./latest_news/LatestNews";
 
-function Home() {
+const Home = () => {
   const [isFeatured, setIsFeatured] = useState<boolean>(true);
 
   return (
@@ -32,6 +32,6 @@ function Home() {
       {isFeatured ? <News /> : <LatestNews />}
     </div>
   );
-}
+};
 
 export default Home;

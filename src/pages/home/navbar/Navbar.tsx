@@ -3,7 +3,7 @@ import HamburgerIcon from "../../../components/icons/hamburger/HamburgerIcon";
 import SearchBar from "../../../components/search_bar/SearchBar";
 import Modal from "../../../components/modal/Modal";
 
-function Navbar() {
+const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   return (
@@ -22,6 +22,6 @@ function Navbar() {
       {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
     </>
   );
-}
+};
 
 export default Navbar;

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { categoryList } from "./categorieList";
 
-function Categories() {
+const Categories = () => {
   return (
     <div className="categories">
       {categoryList.map(({ id, icon: Component, category }) => (
@@ -15,6 +15,6 @@ function Categories() {
       ))}
     </div>
   );
-}
+};
 
 export default Categories;

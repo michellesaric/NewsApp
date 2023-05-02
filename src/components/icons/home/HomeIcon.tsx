@@ -4,7 +4,7 @@ interface Props {
   color: string;
 }
 
-function HomeIcon({ color }: Props) {
+const HomeIcon = ({ color }: Props) => {
   return (
     <svg
       width="20"
@@ -21,6 +21,6 @@ function HomeIcon({ color }: Props) {
       />
     </svg>
   );
-}
+};
 
 export default HomeIcon;

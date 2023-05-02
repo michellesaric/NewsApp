@@ -7,7 +7,7 @@ interface Props {
   setIsModalOpen: (value: boolean) => void;
 }
 
-function Modal({ setIsModalOpen }: Props) {
+const Modal = ({ setIsModalOpen }: Props) => {
   return (
     <div className="modal">
       <div className="modal__exit-icon-wrapper">
@@ -24,6 +24,6 @@ function Modal({ setIsModalOpen }: Props) {
       <Categories />
     </div>
   );
-}
+};
 
 export default Modal;

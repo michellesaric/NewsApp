@@ -1,6 +1,6 @@
 import React from "react";
 
-function ExitIcon() {
+const ExitIcon = () => {
   return (
     <>
       <svg
@@ -29,6 +29,6 @@ function ExitIcon() {
       </svg>
     </>
   );
-}
+};
 
 export default ExitIcon;

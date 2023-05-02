@@ -1,6 +1,6 @@
 import React from "react";
 
-function HamburgerIcon() {
+const HamburgerIcon = () => {
   return (
     <>
       <svg
@@ -16,6 +16,6 @@ function HamburgerIcon() {
       </svg>
     </>
   );
-}
+};
 
 export default HamburgerIcon;
