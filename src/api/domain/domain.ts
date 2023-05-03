@@ -35,9 +35,11 @@ export const getAllNews = () => {
   return newsList;
 };
 
-export const getNewsByCategory = (category: String) => {
+export const getNewsByCategory = (category: string | null) => {
   const newsList = getAllNews();
-  return newsList.filter((news) => news.category === category);
+  return category === "Home" || category === ""
+    ? newsList
+    : newsList.filter((news) => news.category === category);
 };
 
 export const getLatestNews = () => {

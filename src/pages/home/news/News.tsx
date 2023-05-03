@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import NewsCard from "../../../components/news_card/NewsCard";
-import { getAllNews } from "../../../api/domain/domain";
+import { getNewsByCategory } from "../../../api/domain/domain";
+import { CategoryContext } from "../../../context/CategoryContext";
 
 const News = () => {
-  const allNews = getAllNews();
+  const { selectedCategory } = useContext(CategoryContext);
+  const filteredNews = getNewsByCategory(selectedCategory);
   return (
     <div>
-      {allNews.map((news) => (
+      {filteredNews.map((news) => (
         <div key={news.id}>
           <NewsCard news={news} />
         </div>

@@ -100,9 +100,6 @@
   margin-bottom: 8px;
   text-decoration: none;
 }
-.categories .categories__card .categories__card-icon {
-  color: #8d8d8c;
-}
 .categories .categories__card .categories__card-title {
   font-family: "Inter V";
   font-style: normal;
@@ -114,6 +111,15 @@
   color: #8d8d8c;
   mix-blend-mode: normal;
   margin-top: 5.63px;
+}
+.categories .categories__card .red-title {
+  color: #bb1e1e;
+}
+.categories .red-card {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
 }
 
 .nav .nav_wrapper {
