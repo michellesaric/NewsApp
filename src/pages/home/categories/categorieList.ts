@@ -5,6 +5,7 @@ import HealthIcon from "../../../components/icons/health/HealthIcon";
 import ScienceIcon from "../../../components/icons/science/ScienceIcon";
 import SportsIcon from "../../../components/icons/sports/SportsIcon";
 import TechnologyIcon from "../../../components/icons/technology/TechnologyIcon";
+import HeartEmpty from "../../../components/icons/heart_empty/HeartEmpty";
 
 export const categoryList = [
   {
@@ -41,5 +42,10 @@ export const categoryList = [
     id: 7,
     icon: TechnologyIcon,
     category: "Technology",
+  },
+  {
+    id: 8,
+    icon: HeartEmpty,
+    category: "Favorites",
   },
 ];

@@ -30,6 +30,12 @@
       margin-bottom: 2px;
     }
 
+    .news-card__title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
     .news-card__title {
       font-family: "Inter Regular";
       font-style: normal;

@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { FavoriteContext } from "../../context/FavoritesContext";
+import HeartEmpty from "../icons/heart_empty/HeartEmpty";
+import HeartFilled from "../icons/heart_filled/HeartFilled";
 
 interface MainNews {
   id: number;
@@ -13,6 +16,28 @@ interface NewsCardProps {
 
 export const NewsCard = ({ news }: NewsCardProps) => {
   const { id, imageUrl, category, title, author } = news;
+  const { favorites, addFavorite, removeFavorite } =
+    useContext(FavoriteContext);
+
+  const [isHeartFilled, setIsHeartFilled] = useState<boolean>(
+    favorites.some((favorite) => favorite.id === id)
+  );
+  const heartIcon = isHeartFilled ? (
+    <HeartFilled />
+  ) : (
+    <HeartEmpty color="#000000" />
+  );
+
+  const handleHeartClick = () => {
+    if (isHeartFilled) {
+      removeFavorite(id);
+    } else {
+      addFavorite(news);
+    }
+    setIsHeartFilled(!isHeartFilled);
+    console.log(localStorage.getItem("favorites"));
+  };
+
   return (
     <div className="news-card">
       <div
@@ -21,7 +46,10 @@ export const NewsCard = ({ news }: NewsCardProps) => {
       ></div>
       <div className="news-card__text-wrapper">
         <h3 className="news-card__category">{category}</h3>
-        <p className="news-card__title">{title}</p>
+        <div className="news-card__title-wrapper">
+          <p className="news-card__title">{title}</p>
+          <div onClick={handleHeartClick}>{heartIcon}</div>
+        </div>
       </div>
     </div>
   );

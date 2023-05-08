@@ -32,6 +32,11 @@
     }
   }
 
+  .categories__card:last-child:nth-child(3n-1) {
+    margin-right: auto;
+    margin-left: 16px;
+  }
+
   .red-card {
     background: $white;
     box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
