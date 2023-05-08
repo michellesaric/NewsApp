@@ -45,11 +45,14 @@ export const NewsCard = ({ news }: NewsCardProps) => {
         style={{ backgroundImage: `url(${imageUrl})` }}
       ></div>
       <div className="news-card__text-wrapper">
-        <h3 className="news-card__category">{category}</h3>
-        <div className="news-card__title-wrapper">
-          <p className="news-card__title">{title}</p>
-          <div onClick={handleHeartClick}>{heartIcon}</div>
+        <div>
+          <h3 className="news-card__category">{category}</h3>
+          <div className="news-card__title-wrapper">
+            <p className="news-card__title">{title}</p>
+            <div onClick={handleHeartClick}>{heartIcon}</div>
+          </div>
         </div>
+        <p className="news-card__author">{author}</p>
       </div>
     </div>
   );

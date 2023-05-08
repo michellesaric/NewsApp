@@ -43,3 +43,20 @@
     border-radius: 5px;
   }
 }
+
+@media screen and (min-width: 880px) {
+  .categories {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-right: 25px;
+    padding: 0;
+
+    .categories__card {
+      margin-bottom: 0px;
+    }
+
+    .categories__card:last-child:nth-child(3n-1) {
+      margin: 0px;
+    }
+  }
+}

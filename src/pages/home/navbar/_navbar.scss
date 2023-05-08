@@ -1,5 +1,4 @@
 .nav {
-
   .nav_wrapper {
     display: flex;
     justify-content: space-between;
@@ -18,5 +17,29 @@
         color: $red;
       }
     }
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .nav {
+    display: flex;
+
+    .nav_wrapper {
+      .nav_wrapper__logo {
+        margin-right: 43px;
+      }
+
+      .nav_wrapper__hamburger {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav {
+    width: 1095px;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+    margin-bottom: 24px;
   }
 }

@@ -6,14 +6,16 @@ type CategoryContextType = {
 };
 
 export const CategoryContext = createContext<CategoryContextType>({
-  selectedCategory: null,
+  selectedCategory: "Home",
   setSelectedCategory: () => {},
 });
 
-export const CategoryProvider: React.FC<{ children: React.ReactNode }> = ({
+const CategoryProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    "Home"
+  );
 
   return (
     <CategoryContext.Provider value={{ selectedCategory, setSelectedCategory }}>
@@ -21,3 +23,5 @@ export const CategoryProvider: React.FC<{ children: React.ReactNode }> = ({
     </CategoryContext.Provider>
   );
 };
+
+export default CategoryProvider;

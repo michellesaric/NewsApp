@@ -13,7 +13,10 @@ const Navbar = () => {
           <h1 className="nav_wrapper__logo">
             <span className="nav_wrapper__logo--red">My</span>News
           </h1>
-          <div onClick={() => setIsModalOpen(true)}>
+          <div
+            onClick={() => setIsModalOpen(true)}
+            className="nav_wrapper__hamburger"
+          >
             <HamburgerIcon />
           </div>
         </div>
