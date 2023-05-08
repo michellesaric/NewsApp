@@ -7,7 +7,6 @@ import Categories from "./categories/Categories";
 
 const Home = () => {
   const [isFeatured, setIsFeatured] = useState<boolean>(true);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const { selectedCategory } = useContext(CategoryContext);
 
   return (
@@ -40,7 +39,7 @@ const Home = () => {
         <Navbar />
         <div className="wrapper__desktop-news">
           <div className="wrapper__desktop-categories">
-            <Categories setIsModalOpen={setIsModalOpen} />
+            <Categories />
           </div>
           <div className="news-wrapper">
             <p className="news-title">

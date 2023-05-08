@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import { CategoryContext } from "../../../context/CategoryContext";
 import { categoryList } from "./categorieList";
 
-interface Props {
-  setIsModalOpen: (value: boolean) => void;
-}
-
-const Categories = ({ setIsModalOpen }: Props) => {
+const Categories = () => {
   const { selectedCategory, setSelectedCategory } = useContext(CategoryContext);
 
   const handleClick = (category: string | null) => {
@@ -26,7 +22,6 @@ const Categories = ({ setIsModalOpen }: Props) => {
           }
           onClick={() => {
             handleClick(category);
-            setIsModalOpen(false);
           }}
         >
           <div>

@@ -21,7 +21,9 @@ const Modal = ({ setIsModalOpen }: Props) => {
         </h1>
       </div>
       <SearchBar />
-      <Categories setIsModalOpen={setIsModalOpen} />
+      <div onClick={() => setIsModalOpen(false)}>
+        <Categories />
+      </div>
     </div>
   );
 };
