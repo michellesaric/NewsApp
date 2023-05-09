@@ -44,7 +44,17 @@
     }
 
     .latest-news__list::-webkit-scrollbar {
-      display: none;
+      width: 4px;
+    }
+
+    .latest-news__list::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.237981);
+      border-radius: 2px;
+      visibility: hidden;
+    }
+
+    .latest-news__list:hover::-webkit-scrollbar-thumb {
+      visibility: visible;
     }
 
     .latest-news__list {
