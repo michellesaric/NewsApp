@@ -46,11 +46,11 @@ export const NewsCard = ({ news }: NewsCardProps) => {
       ></div>
       <div className="news-card__text-wrapper">
         <div>
-          <h3 className="news-card__category">{category}</h3>
-          <div className="news-card__title-wrapper">
-            <p className="news-card__title">{title}</p>
+          <div className="news-card__category-wrapper">
+            <h3 className="news-card__category">{category}</h3>
             <div onClick={handleHeartClick}>{heartIcon}</div>
           </div>
+          <p className="news-card__title">{title}</p>
         </div>
         <p className="news-card__author">{author}</p>
       </div>
