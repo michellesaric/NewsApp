@@ -4,6 +4,7 @@ import { getNewsByCategory } from "../../../api/domain/domain";
 import { CategoryContext } from "../../../context/CategoryContext";
 import { FavoriteContext } from "../../../context/FavoritesContext";
 import LatestNews from "../latest_news/LatestNews";
+import BreakingNews from "../../../components/breaking_news/BreakingNews";
 
 const News = () => {
   const { selectedCategory } = useContext(CategoryContext);
@@ -22,7 +23,11 @@ const News = () => {
       </div>
       {news.map((news) => (
         <div key={news.id} className="news__wrapper">
-          <NewsCard news={news} />
+          {news.category === "Breaking" ? (
+            <BreakingNews news={news} />
+          ) : (
+            <NewsCard news={news} />
+          )}
         </div>
       ))}
     </div>

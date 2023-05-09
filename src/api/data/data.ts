@@ -134,4 +134,12 @@ export const news: Array<News> = [
     dateTime: new Date("2023-04-27T12:30:00Z"),
     author: "Susan Mom",
   },
+  {
+    id: 16,
+    imageUrl: placeholder,
+    category: "Breaking",
+    title: "Peace On Earth A Wonderful Wish But No Way",
+    dateTime: new Date("2023-04-26T12:30:00Z"),
+    author: "Bernie Sanders",
+  },
 ];
