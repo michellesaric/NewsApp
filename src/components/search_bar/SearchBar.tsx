@@ -10,6 +10,7 @@ function SearchBar() {
         placeholder="Search news"
         className="search_bar__input"
       />
+      <button className="search_bar__button">Search</button>
     </div>
   );
 }

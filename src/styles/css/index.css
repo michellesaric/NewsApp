@@ -443,10 +443,27 @@
 .search_bar .search_bar__input:focus {
   outline: none;
 }
+.search_bar .search_bar__button {
+  display: none;
+}
 
 @media screen and (min-width: 880px) {
   .search_bar {
     width: 725px;
+    padding: 5px 5px 5px 15px;
+  }
+  .search_bar .search_bar__button {
+    display: block;
+    background: #bb1e1e;
+    border-radius: 6px;
+    padding: 10px 16px;
+    border: none;
+    font-family: "Inter Bold";
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
   }
 }
 .modal {
