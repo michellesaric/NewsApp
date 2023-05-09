@@ -125,4 +125,13 @@ export const news: Array<News> = [
     dateTime: new Date("2023-04-28T12:30:00Z"),
     author: "Susan Mom",
   },
+  {
+    id: 15,
+    imageUrl: placeholder,
+    category: "Health",
+    title:
+      "I Am Seriously Not Healthy Anymore, Like I Need Help This Instant But I Am Writing A Blog Instead",
+    dateTime: new Date("2023-04-27T12:30:00Z"),
+    author: "Susan Mom",
+  },
 ];

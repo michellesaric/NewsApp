@@ -546,6 +546,11 @@
   letter-spacing: -0.11px;
   color: #000000;
   max-width: 281.02px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .news-card .news-card__text-wrapper .news-card__author {
   display: none;
