@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 type Favorite = {
   id: number;
   imageUrl: string;
+  newsUrl: string;
   category: string;
   title: string;
   author: string;

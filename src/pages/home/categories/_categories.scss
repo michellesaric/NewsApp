@@ -2,7 +2,6 @@
   padding: 28px 14px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   .categories__card {
     height: 95px;
@@ -12,6 +11,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 8px;
+    margin-left: 16px;
     text-decoration: none;
 
     .categories__card-title {
@@ -32,11 +32,6 @@
     }
   }
 
-  .categories__card:last-child:nth-child(3n-1) {
-    margin-right: auto;
-    margin-left: 16px;
-  }
-
   .red-card {
     background: $white;
     box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
@@ -52,10 +47,6 @@
     padding: 0;
 
     .categories__card {
-      margin-bottom: 0px;
-    }
-
-    .categories__card:last-child:nth-child(3n-1) {
       margin: 0px;
     }
   }

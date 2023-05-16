@@ -3,18 +3,18 @@ import React from "react";
 interface LatestNews {
   id: number;
   title: string;
-  dateTime: Date;
+  publishedAt: Date;
 }
 
 interface LatestNewsCardProps {
   news: LatestNews;
 }
 const LatestNewsCard = ({ news }: LatestNewsCardProps) => {
-  const { id, title, dateTime } = news;
+  const { id, title, publishedAt } = news;
   return (
     <div className="latest-news-card">
       <h4 className="latest-news-card__time">
-        {dateTime.toLocaleTimeString([], {
+        {publishedAt.toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
         })}

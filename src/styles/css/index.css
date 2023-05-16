@@ -127,9 +127,6 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 .categories .categories__card {
   height: 95px;
@@ -148,6 +145,7 @@
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 8px;
+  margin-left: 16px;
   text-decoration: none;
 }
 .categories .categories__card .categories__card-title {
@@ -164,10 +162,6 @@
 }
 .categories .categories__card .red-title {
   color: #bb1e1e;
-}
-.categories .categories__card:last-child:nth-child(3n-1) {
-  margin-right: auto;
-  margin-left: 16px;
 }
 .categories .red-card {
   background: #ffffff;
@@ -188,9 +182,6 @@
     padding: 0;
   }
   .categories .categories__card {
-    margin-bottom: 0px;
-  }
-  .categories .categories__card:last-child:nth-child(3n-1) {
     margin: 0px;
   }
 }
@@ -480,6 +471,7 @@
   position: fixed;
   top: 0;
   padding: 28px 16px;
+  z-index: 1;
 }
 .modal .modal__exit-icon-wrapper {
   width: 100%;
@@ -691,6 +683,7 @@
   letter-spacing: -0.19px;
   color: #ffffff;
   margin-bottom: 8px;
+  max-width: 281px;
 }
 .breaking_news .breaking_news--author {
   font-family: "Inter Regular";
