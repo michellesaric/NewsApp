@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import LatestNewsCard from "../../../components/latest_news_card/LatestNewsCard";
 import RightArrow from "../../../components/icons/right_arrow/RightArrow";
-import { mapLatestNewsData } from "../../../api/data/map";
+import { mapLatestNewsData } from "../../../api/map";
 
 interface LatestNewsProps {
   id: number;
@@ -11,16 +11,59 @@ interface LatestNewsProps {
 
 const LatestNews = () => {
   const [latestNewsList, setLatestNewsList] = useState<LatestNewsProps[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     fetchData();
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    observerRef.current = new IntersectionObserver(handleObserver, options);
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
   }, []);
 
-  async function fetchData() {
-    const newsData = await mapLatestNewsData();
-    setLatestNewsList(newsData);
-    console.log("Latest news fetch happend");
-  }
+  useEffect(() => {
+    if (latestNewsList.length > 0 && observerRef.current) {
+      observerRef.current.observe(
+        document.querySelector(".latest-news__list-bottom")!
+      );
+    }
+  }, [latestNewsList]);
+
+  const fetchData = async () => {
+    setIsLoading(true);
+
+    try {
+      const newsData = await mapLatestNewsData(pageNumber);
+
+      setLatestNewsList((prevNews) => [...prevNews, ...newsData]);
+      setPageNumber((prevPage) => prevPage + 1);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleObserver: IntersectionObserverCallback = (entries) => {
+    const target = entries[0];
+
+    if (target.isIntersecting && !isLoading) {
+      fetchData();
+    }
+  };
 
   return (
     <div className="latest-news__wrapper">
@@ -31,8 +74,10 @@ const LatestNews = () => {
         </div>
         <div className="latest-news__list">
           {latestNewsList.map((news) => (
-            <LatestNewsCard news={news} />
+            <LatestNewsCard key={news.id} news={news} />
           ))}
+          {isLoading && <p>Loading...</p>}
+          <div className="latest-news__list-bottom" />
         </div>
         <div className="latest-news__footer">
           <p className="latest-news__footer-text">See all news</p>

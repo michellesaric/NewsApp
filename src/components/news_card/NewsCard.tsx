@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { FavoriteContext } from "../../context/FavoritesContext";
 import HeartEmpty from "../icons/heart_empty/HeartEmpty";
 import HeartFilled from "../icons/heart_filled/HeartFilled";
+import { Link } from "react-router-dom";
+import placeholder from "../../assets/images/PlaceHolder.png";
 
 interface MainNews {
   id: number;
@@ -16,7 +18,7 @@ interface NewsCardProps {
 }
 
 export const NewsCard = ({ news }: NewsCardProps) => {
-  const { id, imageUrl, category, title, author } = news;
+  const { id, imageUrl, newsUrl, category, title, author } = news;
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoriteContext);
 
@@ -36,24 +38,28 @@ export const NewsCard = ({ news }: NewsCardProps) => {
       addFavorite(news);
     }
     setIsHeartFilled(!isHeartFilled);
-    console.log(localStorage.getItem("favorites"));
   };
 
+  const image = imageUrl === null ? placeholder : imageUrl;
   return (
     <div className="news-card">
       <div
         className="news-card__image"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="news-card__text-wrapper">
-        <div>
+        <div className="news-card__content-wrapper">
           <div className="news-card__category-wrapper">
             <h3 className="news-card__category">{category}</h3>
             <div onClick={handleHeartClick}>{heartIcon}</div>
           </div>
-          <p className="news-card__title">{title}</p>
+          <Link to={newsUrl} className="news-card__title">
+            {title}
+          </Link>
         </div>
-        <p className="news-card__author">{author}</p>
+        <p className="news-card__author">
+          {author === null ? "Undisplayed author" : author}
+        </p>
       </div>
     </div>
   );

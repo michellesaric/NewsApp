@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
 
+  .news__wrapper {
+    text-decoration: none;
+  }
+
   .latest-news-element {
     display: none;
   }

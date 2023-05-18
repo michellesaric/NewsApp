@@ -36,6 +36,12 @@
     color: $white;
     margin-bottom: 8px;
     max-width: 281px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .breaking_news--author {

@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
 import NewsCard from "../../../components/news_card/NewsCard";
-import { mapNewsData, mapNewsDataByCategory } from "../../../api/data/map";
+import {
+  mapNewsData,
+  mapNewsDataByCategory,
+  mapNewsDataBySearch,
+  mapNewsDataBySearchAndCategory,
+} from "../../../api/map";
 import { CategoryContext } from "../../../context/CategoryContext";
 import { FavoriteContext } from "../../../context/FavoritesContext";
+import { SearchContext } from "../../../context/SearchContext";
 import LatestNews from "../latest_news/LatestNews";
 import BreakingNews from "../../../components/breaking_news/BreakingNews";
 
@@ -20,17 +25,30 @@ interface MainNews {
 const News = () => {
   const { selectedCategory } = useContext(CategoryContext);
   const { favorites } = useContext(FavoriteContext);
+  const { searchText, setSearchText } = useContext(SearchContext);
   const [newsList, setNewsList] = useState<MainNews[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    console.log(searchText);
     const fetchData = async () => {
       let newsData = [];
       try {
         if (selectedCategory === "Home") {
-          newsData = await mapNewsData();
+          if (searchText !== "") {
+            newsData = await mapNewsDataBySearch(searchText);
+          } else {
+            newsData = await mapNewsData();
+          }
         } else {
-          newsData = await mapNewsDataByCategory(selectedCategory);
+          if (searchText !== "") {
+            newsData = await mapNewsDataBySearchAndCategory(
+              searchText,
+              selectedCategory
+            );
+          } else {
+            newsData = await mapNewsDataByCategory(selectedCategory);
+          }
         }
 
         setNewsList(newsData);
@@ -39,11 +57,9 @@ const News = () => {
         console.log(error);
         setIsLoading(false);
       }
-
-      console.log("News fetch fired");
     };
     fetchData();
-  }, [selectedCategory]);
+  }, [selectedCategory, searchText]);
 
   const news = selectedCategory === "Favorites" ? favorites : newsList;
 
@@ -57,13 +73,13 @@ const News = () => {
             <LatestNews />
           </div>
           {news.map((news) => (
-            <Link to={news.newsUrl} key={news.id} className="news__wrapper">
+            <div key={news.id} className="news__wrapper">
               {news.category === "Breaking" ? (
                 <BreakingNews news={news} />
               ) : (
                 <NewsCard news={news} />
               )}
-            </Link>
+            </div>
           ))}
         </>
       )}

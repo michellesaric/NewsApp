@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CategoryContext } from "../../../context/CategoryContext";
+import { SearchContext } from "../../../context/SearchContext";
 import { categoryList } from "./categorieList";
 
 const Categories = () => {
   const { selectedCategory, setSelectedCategory } = useContext(CategoryContext);
+  const { setSearchText } = useContext(SearchContext);
 
   const handleClick = (category: string | null) => {
     setSelectedCategory(() => category);
+    setSearchText("");
   };
 
   return (

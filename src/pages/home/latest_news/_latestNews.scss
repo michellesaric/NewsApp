@@ -40,7 +40,7 @@
 
     .latest-news__list {
       height: 429px;
-      overflow-y: scroll;
+      overflow: auto;
     }
 
     .latest-news__list::-webkit-scrollbar {
