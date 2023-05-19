@@ -2,12 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import LatestNewsCard from "../../../components/latest_news_card/LatestNewsCard";
 import RightArrow from "../../../components/icons/right_arrow/RightArrow";
 import { mapLatestNewsData } from "../../../api/map";
-
-interface LatestNewsProps {
-  id: number;
-  title: string;
-  publishedAt: Date;
-}
+import { LatestNewsProps } from "./props";
+import { options } from "./const";
 
 const LatestNews = () => {
   const [latestNewsList, setLatestNewsList] = useState<LatestNewsProps[]>([]);
@@ -19,14 +15,7 @@ const LatestNews = () => {
   useEffect(() => {
     fetchData();
 
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
-
     observerRef.current = new IntersectionObserver(handleObserver, options);
-
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
@@ -67,7 +56,7 @@ const LatestNews = () => {
 
   return (
     <div className="latest-news__wrapper">
-      <div className="latest-news">
+      <section className="latest-news">
         <div className="latest-news__header">
           <div className="latest-news__header-circle"></div>
           <h2 className="latest-news__header-title">Latest news</h2>
@@ -83,7 +72,7 @@ const LatestNews = () => {
           <p className="latest-news__footer-text">See all news</p>
           <RightArrow />
         </div>
-      </div>
+      </section>
     </div>
   );
 };

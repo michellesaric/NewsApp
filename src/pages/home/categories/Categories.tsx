@@ -8,43 +8,40 @@ const Categories = () => {
   const { selectedCategory, setSelectedCategory } = useContext(CategoryContext);
   const { setSearchText } = useContext(SearchContext);
 
-  const handleClick = (category: string | null) => {
-    setSelectedCategory(() => category);
+  const handleClick = (category: string) => {
+    setSelectedCategory(category);
     setSearchText("");
   };
 
   return (
-    <div className="categories">
-      {categoryList.map(({ id, icon: Component, category }) => (
-        <Link
-          to={`/${category}`}
-          key={id}
-          className={
-            "categories__card " +
-            (category === selectedCategory ? "red-card" : "")
-          }
-          onClick={() => {
-            handleClick(category);
-          }}
-        >
-          <div>
-            {
-              <Component
-                color={category === selectedCategory ? "#bb1e1e" : "#8d8d8c"}
-              />
-            }
-          </div>
-          <h3
-            className={
-              "categories__card-title " +
-              (category === selectedCategory ? "red-title" : "")
-            }
+    <section className="categories">
+      {categoryList.map(({ id, icon: Component, category }) => {
+        const isCategorySelected = category === selectedCategory;
+        const iconColor = isCategorySelected ? "#bb1e1e" : "#8d8d8c";
+
+        return (
+          <Link
+            to={`/${category}`}
+            key={id}
+            className={`categories__card ${
+              isCategorySelected ? "red-card" : ""
+            }`}
+            onClick={() => handleClick(category)}
           >
-            {category}
-          </h3>
-        </Link>
-      ))}
-    </div>
+            <div>
+              <Component color={iconColor} />
+            </div>
+            <h3
+              className={`categories__card-title ${
+                isCategorySelected ? "red-title" : ""
+              }`}
+            >
+              {category}
+            </h3>
+          </Link>
+        );
+      })}
+    </section>
   );
 };
 

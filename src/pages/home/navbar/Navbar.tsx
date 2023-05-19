@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="nav">
+      <nav className="nav">
         <div className="nav_wrapper">
           <h1 className="nav_wrapper__logo">
             <span className="nav_wrapper__logo--red">My</span>News
@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
         </div>
         <SearchBar />
-      </div>
+      </nav>
       {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
     </>
   );

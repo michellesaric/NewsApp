@@ -1,6 +1,7 @@
+@forward "./mixins/displayMixins";
+@forward "./mixins/fontMixins";
 @import "./fonts";
 @import "./variables";
-@import "../pages/home/home";
 @import "../pages/home/categories/categories";
 @import "../pages/home/news/news";
 @import "../pages/home/navbar/navbar";
@@ -10,6 +11,8 @@
 @import ".././components/news_card/newsCard";
 @import ".././components/latest_news_card/latestNewsCard";
 @import ".././components/breaking_news/breakingNews";
+@import "../pages/home/layout/desktop/desktop";
+@import "../pages/home/layout/mobile/mobile";
 
 * {
   margin: 0;

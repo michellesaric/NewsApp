@@ -1,29 +1,20 @@
+@import "../../styles/mixins/displayMixins";
+@import "../../styles/mixins/fontMixins";
+
 .modal {
-  height: 100vh;
-  background-color: $white-background;
-  position: fixed;
-  top: 0;
+  @include ModalPosition;
   padding: 28px 16px;
-  z-index: 1;
+  background-color: $white-background;
 
   .modal__exit-icon-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    @include FlexMaxWidthEnd;
   }
 
   .modal__logo-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    @include FlexMaxWidthCenter;
 
     .modal_wrapper__logo {
-      font-family: "Inter Black";
-      font-style: normal;
-      font-weight: 900;
-      font-size: 32px;
-      line-height: 39px;
-      color: $dark-gray;
+      @include LogoDesktop;
 
       .modal_wrapper__logo--red {
         color: $red;

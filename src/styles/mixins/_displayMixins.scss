@@ -1,0 +1,67 @@
+@mixin FlexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin FlexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin FlexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin FlexColumnSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@mixin FlexMaxWidthCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin FlexMaxWidthEnd {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin FlexMaxWidthAlignCenter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@mixin DesktopGrid($rows) {
+  display: grid;
+  grid-template-columns: repeat($rows, 322px);
+  grid-auto-rows: min-content;
+  grid-gap: 22px;
+}
+
+@mixin GridLatestNews($column) {
+  grid-row: 1 / span 2;
+  grid-column: $column;
+}
+
+@mixin ModalPosition {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+@mixin TruncateText($rows) {
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

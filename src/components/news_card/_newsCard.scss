@@ -1,5 +1,8 @@
+@import "../../styles/mixins/displayMixins";
+@import "../../styles/mixins/fontMixins";
+
 .news-card {
-  box-shadow: 0px 1px 2px -1px #c8cad1;
+  box-shadow: 0px 1px 2px -1px $light-gray-secondary;
   border-radius: 8px;
   margin-bottom: 16px;
   max-width: 343px;
@@ -21,40 +24,20 @@
 
     .news-card__content-wrapper {
       .news-card__category-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include FlexSpaceBetween;
 
         .news-card__category {
-          font-family: "Inter Regular";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 10px;
-          line-height: 16px;
-          letter-spacing: -0.0153846px;
-          text-transform: uppercase;
-          color: $blue;
+          @include CategoryDisplayMobile;
           margin-bottom: 2px;
         }
       }
 
       .news-card__title {
-        font-family: "Inter Regular";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: -0.11px;
-        color: $black;
+        @include TitleText;
         max-width: 281.02px;
         cursor: pointer;
-        text-decoration-color: $white;
 
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include TruncateText(2);
       }
 
       .news-card__title:link {
@@ -80,25 +63,16 @@
 
     .news-card__text-wrapper {
       height: 112px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
+      @include FlexColumnSpaceBetween;
       padding: 12px 12px 16px;
 
       .news-card__author {
         display: block;
-        font-family: "Inter Regular";
-        font-size: 12px;
-        line-height: 14px;
-        letter-spacing: -0.0675px;
-        color: $dark-gray;
-        justify-self: flex-end;
+        @include Author;
         text-decoration: none;
         max-width: 281.02px;
 
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include TruncateText(1);
       }
     }
   }

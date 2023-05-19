@@ -1,0 +1,30 @@
+@import "../../../../styles/mixins/displayMixins";
+@import "../../../../styles/mixins/fontMixins";
+
+.wrapper__desktop {
+  padding: 35px 24px;
+  background: $white-background;
+
+  .wrapper__desktop-news {
+    @include FlexMaxWidthCenter;
+
+    .news-title {
+      @include NewsTitle;
+      margin-bottom: 16px;
+    }
+  }
+
+  .wrapper__desktop-categories {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .wrapper__desktop {
+    @include FlexColumnCenter;
+
+    .wrapper__desktop-categories {
+      display: block;
+    }
+  }
+}

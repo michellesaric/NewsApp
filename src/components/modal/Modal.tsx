@@ -2,14 +2,11 @@ import React from "react";
 import Categories from "../../pages/home/categories/Categories";
 import ExitIcon from "../icons/exit/ExitIcon";
 import SearchBar from "../search_bar/SearchBar";
+import { ModalProps } from "./props";
 
-interface Props {
-  setIsModalOpen: (value: boolean) => void;
-}
-
-const Modal = ({ setIsModalOpen }: Props) => {
+const Modal = ({ setIsModalOpen }: ModalProps) => {
   return (
-    <div className="modal">
+    <section className="modal">
       <div className="modal__exit-icon-wrapper">
         <div onClick={() => setIsModalOpen(false)}>
           <ExitIcon />
@@ -24,7 +21,7 @@ const Modal = ({ setIsModalOpen }: Props) => {
       <div onClick={() => setIsModalOpen(false)}>
         <Categories />
       </div>
-    </div>
+    </section>
   );
 };
 

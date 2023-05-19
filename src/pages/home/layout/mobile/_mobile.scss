@@ -1,0 +1,29 @@
+@use "../../../../styles/mixins/fontMixins";
+
+.wrapper__mobile {
+  background: $white-background;
+  padding: 24px 16px;
+
+  .button_wrapper {
+    @include FlexMaxWidthCenter;
+    margin-bottom: 16px;
+
+    .btn {
+      @include ButtonText;
+    }
+    .button_wrapper-red {
+      padding: 10px 16px;
+      background-color: $light-red;
+      border-radius: 20px;
+      color: $red;
+      border: none;
+    }
+
+    .button_wrapper-regular {
+      background: none;
+      border: none;
+      color: $dark-gray;
+      padding: 0px 17px;
+    }
+  }
+}

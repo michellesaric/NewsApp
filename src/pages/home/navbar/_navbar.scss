@@ -1,17 +1,13 @@
+@import "../../../styles/mixins/fontMixins";
+@import "../../../styles/mixins/displayMixins";
+
 .nav {
   .nav_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include FlexSpaceBetween;
     margin-bottom: 20px;
 
     .nav_wrapper__logo {
-      font-family: "Inter Black";
-      font-style: normal;
-      font-weight: 900;
-      font-size: 24px;
-      line-height: 29px;
-      color: $dark-gray;
+      @include LogoMobile;
 
       .nav_wrapper__logo--red {
         color: $red;
@@ -26,6 +22,7 @@
 
     .nav_wrapper {
       .nav_wrapper__logo {
+        @include LogoDesktop;
         margin-right: 43px;
       }
 

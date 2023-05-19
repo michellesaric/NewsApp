@@ -11,26 +11,16 @@ import { FavoriteContext } from "../../../context/FavoritesContext";
 import { SearchContext } from "../../../context/SearchContext";
 import LatestNews from "../latest_news/LatestNews";
 import BreakingNews from "../../../components/breaking_news/BreakingNews";
-
-interface MainNews {
-  id: number;
-  imageUrl: string;
-  newsUrl: string;
-  category: string;
-  title: string;
-  author: string;
-  source: string;
-}
+import { MainNews } from "./props";
 
 const News = () => {
   const { selectedCategory } = useContext(CategoryContext);
   const { favorites } = useContext(FavoriteContext);
-  const { searchText, setSearchText } = useContext(SearchContext);
+  const { searchText } = useContext(SearchContext);
   const [newsList, setNewsList] = useState<MainNews[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log(searchText);
     const fetchData = async () => {
       let newsData = [];
       try {
@@ -64,26 +54,26 @@ const News = () => {
   const news = selectedCategory === "Favorites" ? favorites : newsList;
 
   return (
-    <div className="news">
+    <section className="news">
       {isLoading ? (
         <div>Loading....</div>
       ) : (
         <>
-          <div className="news__wrapper latest-news-element">
+          <article className="news__wrapper latest-news-element">
             <LatestNews />
-          </div>
+          </article>
           {news.map((news) => (
-            <div key={news.id} className="news__wrapper">
+            <article key={news.id} className="news__wrapper">
               {news.category === "Breaking" ? (
                 <BreakingNews news={news} />
               ) : (
                 <NewsCard news={news} />
               )}
-            </div>
+            </article>
           ))}
         </>
       )}
-    </div>
+    </section>
   );
 };
 

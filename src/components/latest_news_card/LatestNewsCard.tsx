@@ -1,18 +1,10 @@
 import React from "react";
+import { LatestNewsCardProps } from "./props";
 
-interface LatestNews {
-  id: number;
-  title: string;
-  publishedAt: Date;
-}
-
-interface LatestNewsCardProps {
-  news: LatestNews;
-}
 const LatestNewsCard = ({ news }: LatestNewsCardProps) => {
-  const { id, title, publishedAt } = news;
+  const { title, publishedAt } = news;
   return (
-    <div className="latest-news-card">
+    <article className="latest-news-card">
       <h4 className="latest-news-card__time">
         {publishedAt.toLocaleTimeString([], {
           hour: "2-digit",
@@ -20,7 +12,7 @@ const LatestNewsCard = ({ news }: LatestNewsCardProps) => {
         })}
       </h4>
       <p className="latest-news-card__title">{title}</p>
-    </div>
+    </article>
   );
 };
 

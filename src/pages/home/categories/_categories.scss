@@ -1,3 +1,5 @@
+@import "../../../styles/mixins/fontMixins";
+
 .categories {
   padding: 28px 14px;
   display: flex;
@@ -15,15 +17,7 @@
     text-decoration: none;
 
     .categories__card-title {
-      font-family: "Inter V";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: center;
-      letter-spacing: 0.140741px;
-      color: #8d8d8c;
-      mix-blend-mode: normal;
+      @include CategoryMobile;
       margin-top: 5.63px;
     }
 
@@ -48,6 +42,13 @@
 
     .categories__card {
       margin: 0px;
+      height: 63px;
+      width: 63px;
+
+      .categories__card-title {
+        @include CategoryDesktop;
+        margin-top: 4px;
+      }
     }
   }
 }

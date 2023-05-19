@@ -1,0 +1,131 @@
+@use "../fonts";
+@use "../variables";
+
+@mixin LogoMobile {
+  font-family: "Inter Black", sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  color: $dark-gray;
+}
+
+@mixin LogoDesktop {
+  font-family: "Inter Black", sans-serif;
+  font-size: 32px;
+  line-height: 39px;
+  color: $dark-gray;
+}
+
+@mixin SearchPlaceholderMobile {
+  font-family: "Inter Regular", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: $black;
+  mix-blend-mode: normal;
+  opacity: 0.4;
+}
+
+@mixin SearchPlaceholderDesktop {
+  font-family: "Inter Regular", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: $dark-gray;
+  mix-blend-mode: normal;
+  opacity: 0.4;
+}
+
+@mixin ButtonText {
+  font-family: "Inter SemiBold", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.0246154px;
+  color: $dark-gray;
+}
+
+@mixin NewsTitle {
+  font-family: "Inter SemiBold", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.153px;
+  color: $dark-gray;
+}
+
+@mixin CategoryDisplayMobile {
+  font-family: "Inter Bold", sans-serif;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: -0.0153846px;
+  text-transform: uppercase;
+  color: $blue;
+}
+
+@mixin CategoryDisplayDesktop {
+  font-family: "Inter Bold", sans-serif;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: -0.0153846px;
+  text-transform: uppercase;
+  color: $blue;
+}
+
+@mixin TitleText {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.11px;
+  color: $black;
+}
+
+@mixin Author {
+  font-family: "Inter Regular", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.0675px;
+  color: $dark-gray;
+}
+
+@mixin CategoryMobile {
+  font-family: "Inter SemiBold", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.140741px;
+  color: $light-gray;
+  mix-blend-mode: normal;
+}
+
+@mixin CategoryDesktop {
+  font-family: "Inter SemiBold", sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: $dark-gray;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+@mixin LatestNewsTitle {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.11px;
+  color: $black;
+}
+
+@mixin LatestNewsTimeStamp {
+  font-family: "Inter Bold", sans-serif;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: -0.0153846px;
+  text-transform: uppercase;
+  color: $blue;
+}
+
+@mixin SeeAllNews {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.09625px;
+  color: $blue;
+}
