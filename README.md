@@ -26,7 +26,7 @@ Folder structure begins with `src` folder. That is the main folder which then ha
 
 - pages folder: the `pages` folder has two subfolders: `error` subfolder which contains the error page and `home` subfolder which contains the home page. The home page is divided based on the sections which in this case are the navigation bar, the categories section, the news section and the latest news section.
 
--styles folder: the `styles` folder contains all the CSS used in the project.
+- styles folder: the `styles` folder contains all the CSS used in the project.
 
 ## Favorites functionality
 
