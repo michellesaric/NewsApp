@@ -1,0 +1,43 @@
+@import "../../styles/mixins/fontMixins";
+@import "../../styles/mixins/displayMixins";
+
+.error-page {
+  padding-top: 123px;
+  width: 279px;
+  margin: 0px auto;
+
+  .error-page__404 {
+    @include Error404;
+    margin-bottom: 18px;
+  }
+
+  .error-page__404 span {
+    color: $black;
+  }
+
+  .error-page__text {
+    @include TitleText;
+    max-width: 279px;
+    margin-bottom: 33px;
+  }
+
+  .error-page__redirect {
+    @include FlexSpaceBetween;
+    @include ShadowBox;
+    padding: 21px 19px;
+    width: 156px;
+    text-decoration: none;
+
+    .error-page__redirect-wrapper {
+      display: flex;
+      align-items: flex-end;
+
+      .error-page__redirect-wrapper-home {
+        @include CategoryMobile;
+        margin-left: 8px;
+        font-size: 16px;
+        color: $red;
+      }
+    }
+  }
+}

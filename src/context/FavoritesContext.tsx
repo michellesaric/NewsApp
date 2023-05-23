@@ -33,20 +33,26 @@ const FavoriteProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, []);
 
-  useEffect(() => {
-    if (favorites.length) {
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
-  }, [favorites]);
+  const updateLocalStorage = (updatedFavorites: Favorite[]) => {
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   const addFavorite = (newFavorite: Favorite) => {
-    setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
+    setFavorites((prevFavorites) => {
+      const updatedFavorites = [...prevFavorites, newFavorite];
+      updateLocalStorage(updatedFavorites);
+      return updatedFavorites;
+    });
   };
 
   const removeFavorite = (id: number) => {
-    setFavorites((prevFavorites) =>
-      prevFavorites.filter((favorite) => favorite.id !== id)
-    );
+    setFavorites((prevFavorites) => {
+      const updatedFavorites = prevFavorites.filter(
+        (favorite) => favorite.id !== id
+      );
+      updateLocalStorage(updatedFavorites);
+      return updatedFavorites;
+    });
   };
 
   return (

@@ -1,20 +1,24 @@
 import React, { useContext, useState } from "react";
 import SearchIcon from "../icons/search/SearchIcon";
 import { SearchContext } from "../../context/SearchContext";
+import { ModalContext } from "../../context/ModalContext";
 
 function SearchBar() {
   const { setSearchText } = useContext(SearchContext);
   const [searchValue, setSearchValue] = useState("");
+  const { setIsModalOpen } = useContext(ModalContext);
 
   const handleSearch = () => {
     setSearchText(searchValue.toLowerCase());
     setSearchValue("");
+    setIsModalOpen(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       setSearchText(e.currentTarget.value.toLowerCase());
       setSearchValue("");
+      setIsModalOpen(false);
     }
   };
 

@@ -35,16 +35,8 @@
 
     .search_bar__button {
       display: block;
-      background: $red;
-      border-radius: 6px;
-      padding: 10px 16px;
-      border: none;
-
-      font-family: "Inter Bold";
-      font-size: 15px;
-      line-height: 20px;
-      text-align: center;
-      text-transform: uppercase;
+      @include SearchButton;
+      @include SearchButtonText;
 
       color: $white;
       cursor: pointer;

@@ -41,6 +41,8 @@ const News = () => {
           }
         }
 
+        console.log(searchText);
+
         setNewsList(newsData);
         setIsLoading(false);
       } catch (error) {
@@ -62,8 +64,11 @@ const News = () => {
           <article className="news__wrapper latest-news-element">
             <LatestNews />
           </article>
-          {news.map((news) => (
-            <article key={news.id} className="news__wrapper">
+          {news.map((news, index) => (
+            <article
+              key={`${news.id}-${selectedCategory}-${index}`}
+              className="news__wrapper"
+            >
               {news.category === "Breaking" ? (
                 <BreakingNews news={news} />
               ) : (

@@ -1,6 +1,7 @@
 interface LatestNews {
   id: number;
   title: string;
+  newsUrl: string;
   publishedAt: Date;
 }
 

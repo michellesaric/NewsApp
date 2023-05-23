@@ -129,3 +129,19 @@
   letter-spacing: -0.09625px;
   color: $blue;
 }
+
+@mixin Error404 {
+  font-family: "Inter Black";
+  font-size: 64px;
+  line-height: 77px;
+  color: $red;
+}
+
+@mixin SearchButtonText {
+  font-family: "Inter Bold", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $red;
+}

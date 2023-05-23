@@ -5,6 +5,7 @@
   @include ModalPosition;
   padding: 28px 16px;
   background-color: $white-background;
+  width: 100%;
 
   .modal__exit-icon-wrapper {
     @include FlexMaxWidthEnd;

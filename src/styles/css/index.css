@@ -103,15 +103,22 @@
   font-display: swap;
   src: url("/src/assets/fonts/Inter-Black.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-Black.woff?v=3.19") format("woff");
 }
-.categories {
-  padding: 28px 14px;
+.categories-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.categories .categories__card {
+.categories-wrapper .categories {
+  padding: 28px 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 95px);
+  grid-auto-rows: 95px 95px;
+  grid-gap: 16px 8px;
+}
+.categories-wrapper .categories .categories__card {
   height: 95px;
   width: 95px;
   display: -webkit-box;
@@ -127,11 +134,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 8px;
-  margin-left: 16px;
   text-decoration: none;
 }
-.categories .categories__card .categories__card-title {
+.categories-wrapper .categories .categories__card .categories__card-title {
   font-family: "Inter SemiBold", sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -141,20 +146,36 @@
   mix-blend-mode: normal;
   margin-top: 5.63px;
 }
-.categories .categories__card .red-title {
-  color: #bb1e1e;
+.categories-wrapper .categories .categories__card .red-title {
+  color: #bb1e1e !important;
 }
-.categories .red-card {
+.categories-wrapper .categories .red-card {
   background: #ffffff;
   -webkit-box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
   border-radius: 5px;
 }
 
+@media screen and (min-width: 500px) {
+  .categories-wrapper .categories {
+    grid-template-columns: repeat(4, 95px);
+  }
+}
+@media screen and (min-width: 640px) {
+  .categories-wrapper .categories {
+    grid-template-columns: repeat(5, 95px);
+  }
+}
+@media screen and (min-width: 720px) {
+  .categories-wrapper .categories {
+    grid-template-columns: repeat(6, 95px);
+  }
+}
 @media screen and (min-width: 880px) {
-  .categories {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+  .categories-wrapper .categories {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -162,12 +183,12 @@
     margin-right: 25px;
     padding: 0;
   }
-  .categories .categories__card {
+  .categories-wrapper .categories .categories__card {
     margin: 0px;
     height: 63px;
     width: 63px;
   }
-  .categories .categories__card .categories__card-title {
+  .categories-wrapper .categories .categories__card .categories__card-title {
     font-family: "Inter SemiBold", sans-serif;
     font-size: 10px;
     line-height: 14px;
@@ -560,11 +581,12 @@
     border-radius: 6px;
     padding: 10px 16px;
     border: none;
-    font-family: "Inter Bold";
+    font-family: "Inter Bold", sans-serif;
     font-size: 15px;
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
+    color: #bb1e1e;
     color: #ffffff;
     cursor: pointer;
   }
@@ -608,9 +630,11 @@
   height: 100vh;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1;
   padding: 28px 16px;
   background-color: #f4f5f8;
+  width: 100%;
 }
 .modal .modal__exit-icon-wrapper {
   width: 100%;
@@ -741,7 +765,7 @@
 .news-card .news-card__text-wrapper .news-card__content-wrapper .news-card__title:link {
   text-decoration: none;
 }
-.news-card .news-card__text-wrapper .news-card__content-wrapper .news-card__author {
+.news-card .news-card__text-wrapper .news-card__author {
   display: none;
 }
 
@@ -838,6 +862,7 @@
   line-height: 20px;
   letter-spacing: -0.11px;
   color: #000000;
+  text-decoration: none;
 }
 
 .latest-news-card:first-child {
@@ -1060,6 +1085,104 @@
   border: none;
   color: #1d1d1b;
   padding: 0px 17px;
+}
+
+@font-face {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/src/assets/fonts/Inter-Regular.woff2") format("woff2"), url("/src/assets/fonts/Inter-Regular.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/src/assets/fonts/Inter-Medium.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-Medium.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/src/assets/fonts/Inter-SemiBold.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-SemiBold.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/src/assets/fonts/Inter-Bold.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-Bold.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter Black";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/src/assets/fonts/Inter-Black.woff2?v=3.19") format("woff2"), url("/src/assets/fonts/Inter-Black.woff?v=3.19") format("woff");
+}
+.error-page {
+  padding-top: 123px;
+  width: 279px;
+  margin: 0px auto;
+}
+.error-page .error-page__404 {
+  font-family: "Inter Black";
+  font-size: 64px;
+  line-height: 77px;
+  color: #bb1e1e;
+  margin-bottom: 18px;
+}
+.error-page .error-page__404 span {
+  color: #000000;
+}
+.error-page .error-page__text {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.11px;
+  color: #000000;
+  max-width: 279px;
+  margin-bottom: 33px;
+}
+.error-page .error-page__redirect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
+  padding: 21px 19px;
+  width: 156px;
+  text-decoration: none;
+}
+.error-page .error-page__redirect .error-page__redirect-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.error-page .error-page__redirect .error-page__redirect-wrapper .error-page__redirect-wrapper-home {
+  font-family: "Inter SemiBold", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.140741px;
+  color: #8d8d8c;
+  mix-blend-mode: normal;
+  margin-left: 8px;
+  font-size: 16px;
+  color: #bb1e1e;
 }
 
 * {

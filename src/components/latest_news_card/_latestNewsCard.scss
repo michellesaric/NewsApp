@@ -11,6 +11,7 @@
 
   .latest-news-card__title {
     @include LatestNewsTitle;
+    text-decoration: none;
   }
 }
 

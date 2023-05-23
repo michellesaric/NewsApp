@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ModalContext } from "../../context/ModalContext";
 import Categories from "../../pages/home/categories/Categories";
 import ExitIcon from "../icons/exit/ExitIcon";
 import SearchBar from "../search_bar/SearchBar";
-import { ModalProps } from "./props";
 
-const Modal = ({ setIsModalOpen }: ModalProps) => {
+const Modal = () => {
+  const { setIsModalOpen } = useContext(ModalContext);
   return (
     <section className="modal">
       <div className="modal__exit-icon-wrapper">
@@ -18,7 +19,7 @@ const Modal = ({ setIsModalOpen }: ModalProps) => {
         </h1>
       </div>
       <SearchBar />
-      <div onClick={() => setIsModalOpen(false)}>
+      <div>
         <Categories />
       </div>
     </section>

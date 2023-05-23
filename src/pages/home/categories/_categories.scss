@@ -1,53 +1,82 @@
 @import "../../../styles/mixins/fontMixins";
+@import "../../../styles/mixins/displayMixins";
 
-.categories {
-  padding: 28px 14px;
+.categories-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  .categories {
+    padding: 28px 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 95px);
+    grid-auto-rows: 95px 95px;
+    grid-gap: 16px 8px;
 
-  .categories__card {
-    height: 95px;
-    width: 95px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
-    margin-left: 16px;
-    text-decoration: none;
+    .categories__card {
+      height: 95px;
+      width: 95px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
 
-    .categories__card-title {
-      @include CategoryMobile;
-      margin-top: 5.63px;
+      .categories__card-title {
+        @include CategoryMobile;
+        margin-top: 5.63px;
+      }
+
+      .red-title {
+        color: $red !important;
+      }
     }
 
-    .red-title {
-      color: $red;
+    .red-card {
+      @include ShadowBox;
     }
   }
+}
 
-  .red-card {
-    background: $white;
-    box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
-    border-radius: 5px;
+@media screen and (min-width: 500px) {
+  .categories-wrapper {
+    .categories {
+      grid-template-columns: repeat(4, 95px);
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .categories-wrapper {
+    .categories {
+      grid-template-columns: repeat(5, 95px);
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .categories-wrapper {
+    .categories {
+      grid-template-columns: repeat(6, 95px);
+    }
   }
 }
 
 @media screen and (min-width: 880px) {
-  .categories {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    margin-right: 25px;
-    padding: 0;
+  .categories-wrapper {
+    .categories {
+      display: flex;
+      flex-direction: column;
+      margin-right: 25px;
+      padding: 0;
 
-    .categories__card {
-      margin: 0px;
-      height: 63px;
-      width: 63px;
+      .categories__card {
+        margin: 0px;
+        height: 63px;
+        width: 63px;
 
-      .categories__card-title {
-        @include CategoryDesktop;
-        margin-top: 4px;
+        .categories__card-title {
+          @include CategoryDesktop;
+          margin-top: 4px;
+        }
       }
     }
   }

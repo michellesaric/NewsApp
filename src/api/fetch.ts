@@ -66,7 +66,7 @@ export async function fetchNewsBySearchAndCategory(
   search: string | null,
   category: string | null
 ) {
-  const url = `https://newsapi.org/v2/top-headlines?country=us?sortBy=publishedAt&q=${search}&category=${category}&apiKey=df5df4e7b94145c484398ac69aa0a98f`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&sortBy=publishedAt&q=${search}&category=${category}&apiKey=df5df4e7b94145c484398ac69aa0a98f`;
   try {
     const response = await axios.get(url);
     const allNewsBySearchAndCategory = response.data.articles;

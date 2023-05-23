@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import HamburgerIcon from "../../../components/icons/hamburger/HamburgerIcon";
 import SearchBar from "../../../components/search_bar/SearchBar";
 import Modal from "../../../components/modal/Modal";
+import { ModalContext } from "../../../context/ModalContext";
 
 const Navbar = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const { isModalOpen, setIsModalOpen } = useContext(ModalContext);
 
   return (
     <>
@@ -22,7 +23,7 @@ const Navbar = () => {
         </div>
         <SearchBar />
       </nav>
-      {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && <Modal />}
     </>
   );
 };

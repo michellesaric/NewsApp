@@ -21,6 +21,7 @@ interface MainNews {
 interface LatestNews {
   id: number;
   title: string;
+  newsUrl: string;
   publishedAt: Date;
 }
 
@@ -74,6 +75,7 @@ export async function mapLatestNewsData(pageNumber: number) {
     return {
       id: uuidv4(),
       title: news.title,
+      newsUlr: news.url,
       publishedAt: new Date(news.publishedAt),
     };
   });
