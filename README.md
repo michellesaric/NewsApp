@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+### News Application Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of the project was to create a Landing page with the display of news cards containing neccessary information about different news articles. Key functionalities to implement were:
 
-## Available Scripts
+- Search bar: Enter a certain key word and the landpage should display news based on the search in the title of the news card
+- Categories: Search news by categories
+- Favorites: Added a news card to favorites and remove favorites.
 
-In the project directory, you can run:
+Design was made prehandedly by some very talented desinger/s
 
-### `npm start`
+## Folder structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Folder structure begins with `src` folder. That is the main folder which then has subfolders in the following order:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- api folder: `api` folder has a `fetch.ts` file which fetches all the news depending on the parameters it takes, and it also has a `map.ts` file which maps all the data accordingly.
 
-### `npm test`
+- assets folder: the `assets` folder has two subfolders: `fonts` for imported fonts and `images` for all the images needed for the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- components folder: a folder which contains code that is used repeadetly throughout the project. Such components would be icons, buttons, cards etc.
 
-### `npm run build`
+- context folder: `context` folder contains 4 different contexts and providers that were used in the app.
+  The first context is the `CategoriesContext` which is used for containing the selected category.
+  The second context is the `FavoritesContext` which is used for containg all the favorites. This context was also used together with localStorage to remember the favorites.
+  The third context is the `SearchContext` which is used to contain the string used for searching.
+  The fourth and last context is `ModalContext` which is used to contain the boolean of if the modal nav bar is open or closed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- pages folder: the `pages` folder has two subfolders: `error` subfolder which contains the error page and `home` subfolder which contains the home page. The home page is divided based on the sections which in this case are the navigation bar, the categories section, the news section and the latest news section.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-styles folder: the `styles` folder contains all the CSS used in the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Favorites functionality
 
-### `npm run eject`
+The favorites functionality wasn't designed and was allowed for me to freely use any design and functionality. The design approach I used was the heart icons.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This would be the layout with just empty hearts displayed:
+![Images with empty hearts](src/assets/images/Image_with_empty_hearts.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This would be the layout with some of the cards favorited:
+![Images with filled hearts](src/assets/images/Images_with_filled_hearts.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This is how the favorites looks like:
+![Images with filled hearts](src/assets/images/Favorites.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was written in react.js, the news data was pulled from the news API, for data storing local storage was used, and SASS was used for CSS.
